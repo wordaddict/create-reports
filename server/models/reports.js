@@ -15,13 +15,13 @@ const ReportsSchema = new Schema({
         default: Date.now()
     },
     position: {
-        type: Coordinates,
+        type: String,
         required: true
     }
 })
 
 ReportsSchema.plugin(timestamps);
-campaignSchema.plugin(mongooseStringQuery);
+ReportsSchema.plugin(mongooseStringQuery);
 const ReportModel = mongoose.model('reports', ReportsSchema);
 
 module.exports = ReportModel;
