@@ -24,12 +24,6 @@ const ReportService = (lat, long) => {
                             finalData.push(body);
                         }
                         return resolve(finalData);
-                        // return res.send({
-                        //     "error": false,
-                        //     "code": 200,
-                        //     "message": "reports succesfully fetched",
-                        //     "data": finalData
-                        // })
                     });
             }
         })

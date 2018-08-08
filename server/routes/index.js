@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 const { mongoose } = require("../config/index");
 const ReportModel = require('../models/reports');
-//const getLocationReports  = require('../controllers/reports');
 const ReportService = require('../services/reports');
 
 router.use(bodyParser.json());
@@ -18,10 +17,10 @@ router.get('/reports/:lat/:long', (req, res) => {
     ReportService(lat, long)
         .then((finaldata) => {
         return res.send({
-            "error": false,
-            "code": 200,
-            "message": "reports succesfully fetched",
-            "data": finaldata
+            error: false,
+            code: 200,
+            message: "reports succesfully fetched",
+            reponse: finaldata
         })
     })
 })
@@ -32,24 +31,24 @@ router.post('/reports', (req, res) => {
 
     if (!body) {
         return res.send({
-            "error": true,
-            "code": 400,
-            "message": "provide post body data of title and position",
+            error: true,
+            code: 400,
+            message: "provide post body data of title and position",
         });
     }
     if (!body.title) {
         return res.send({
-            "error": true,
-            "code": 400,
-            "message": "provide title of the reports",
+            error: true,
+            code: 400,
+            message: "provide title of the reports",
         });  
     }
 
     if (!body.position) {
         return res.send({
-            "error": true,
-            "code": 400,
-            "message": "provide position of the reports",
+            error: true,
+            code: 400,
+            message: "provide position of the reports",
         });  
     }
 
@@ -63,9 +62,9 @@ router.post('/reports', (req, res) => {
         .then((data) => {
             console.log('Reports created successfully', data);
             return res.send({
-                "error": false,
-                "code": 200,
-                "message": "reports succesfully created",
+                error: false,
+                code: 200,
+                message: "reports succesfully created",
             })
         })
         .catch((err) => {
