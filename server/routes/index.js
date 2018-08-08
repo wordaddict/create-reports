@@ -1,14 +1,19 @@
 const express = require('express');
-const route = express.Router();
+const router = express.Router();
 
-// get all reports
-route.get('/reports', (req, res) => {
+// get all reports by lat and long
+router.get('/reports/:lat/:long', (req, res) => {
     return res.send({
         "error": false,
         "code": 200,
         "message": "reports succesfully fetched",
-        "data": data
+        //"data": data
     })
 })
 
-// get reports by Id
+// Register a report
+router.post('/reports', (req, res) => {
+
+});
+
+module.exports = router;
