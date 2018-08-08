@@ -36,3 +36,25 @@ describe('/GET Reports withing 10km of distance', () => {
         })
     });
 });
+
+// Testing post request
+describe('/Post new Reports', () => {
+    it('should respond with data on post', function(done) {
+        chai.request(app)
+        .post('/reports')
+        .send({
+            "title": "test",
+            "time": "12:30",
+            "position": {
+                "latitude": 123,
+                "longitude": 124
+                }
+            })
+        .end(function(err, res) {
+            if (err) done(err);
+            res.should.have.status(200);
+            res.body.should.have.property('message');
+            done();
+            });
+    });
+});
