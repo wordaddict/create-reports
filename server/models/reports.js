@@ -14,10 +14,8 @@ const ReportsSchema = new Schema({
         required: false,
         default: Date.now()
     },
-    position: {
-        type: String,
-        required: true
-    }
+    position:
+        { type: {Object}, required: true}
 })
 
 ReportsSchema.plugin(timestamps);
