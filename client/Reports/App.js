@@ -27,6 +27,7 @@
 
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import ListViewDemo from './components/report_list';
 
 import t from 'tcomb-form-native'; // 0.6.9
 import getLocation from './components/geolocation';
@@ -98,6 +99,7 @@ export default class App extends Component {
           title="Report!"
           onPress={this.handleSubmit}
         />
+        <ListViewDemo/>
       </View>
     );
   }

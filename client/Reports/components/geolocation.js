@@ -1,21 +1,13 @@
-// export default getLocation = () => {
-//     const location = navigator.geolocation.getCurrentPosition()
-//     let latitude = location.coords.latitude;
-//     let longitude = location.coords.longitude;
-//     return {
-//         latitude,
-//         longitude
-//     }
-// };
-
 export default getLocation = () => {
-    return navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-function showPosition(position) {
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-    return {
-        latitude, longitude
-    }
+    return new Promise((resolve) => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position.coords.latitude, position.coords.longitude)
+            let dat = {
+                latitude: position.coords.latitude, 
+                longitude: position.coords.longitude
+            }
+            return resolve(dat);
+          });
+    })
+ 
 }

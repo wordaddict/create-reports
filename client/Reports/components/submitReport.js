@@ -7,11 +7,14 @@ export default submitReport = (postbody) => {
             "Content-Type": "application/json; charset=utf-8",
         },
         body: JSON.stringify(postbody)
-    })
-    .then((response) => {
-        console.log('Response from posting api', response);
-    })
-    .catch((err) => {
-        console.log('error from posting body data', err);
-    });
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((response) => {
+            console.log('Response from posting api', response);
+        })
+        .catch((err) => {
+            console.log('error from posting body data', err);
+        });
 };
