@@ -19,7 +19,7 @@ router.get('/reports/:lat/:long', (req, res) => {
       error: false,
       code: 200,
       message: 'reports succesfully fetched',
-      reponse: finaldata
+      data: finaldata
     }))
     .catch(() => res.send({
       error: false,

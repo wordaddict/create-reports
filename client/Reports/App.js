@@ -88,19 +88,20 @@ export default class App extends Component {
   
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Give a report!</Text>
-        <Form 
-          ref={c => this._form = c}
-          type={Report} 
-          options={options}
-        />
-        <Button
-          title="Report!"
-          onPress={this.handleSubmit}
-        />
-        <ListViewDemo/>
-      </View>
+      // <View style={styles.container}>
+      //   <Text>Give a report!</Text>
+      //   <Form 
+      //     ref={c => this._form = c}
+      //     type={Report} 
+      //     options={options}
+      //   />
+      //   <Button
+      //     title="Report!"
+      //     onPress={this.handleSubmit}
+      //   />
+      //   <ListViewDemo/>
+     // </View>
+      <ListViewDemo/>
     );
   }
 }
