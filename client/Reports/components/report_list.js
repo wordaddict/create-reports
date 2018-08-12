@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import listReport from './listreport';
    
-// const styles = StyleSheet.create({
-//     separator: {
-//       flex: 1,
-//       height: StyleSheet.hairlineWidth,
-//       backgroundColor: '#8E8E8E',
-//     },
-//   });
-  
   class ListViewDemo extends React.Component {
     constructor(props) {
         super(props);
@@ -57,7 +49,6 @@ import listReport from './listreport';
     },
     h2text: {
       marginTop: 10,
-      //fontFamily: 'Verdana',
       fontSize: 36,
       fontWeight: 'bold',
     },
@@ -67,7 +58,6 @@ import listReport from './listreport';
       borderRadius: 2,
     },
     title: {
-     // fontFamily: 'Verdana',
       fontSize: 18
     },
     time: {
